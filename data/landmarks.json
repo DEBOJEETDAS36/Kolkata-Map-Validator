@@ -1,0 +1,16 @@
+{
+    "landmarks": [
+        {
+            "name": "Howrah Bridge to Victoria Memorial",
+            "start": [22.5851, 88.3468],
+            "end": [22.5448, 88.3426],
+            "app_dist": 5.2
+        },
+        {
+            "name": "Arsalan Park Circus",
+            "type": "business",
+            "open": 11,
+            "close": 23
+        }
+    ]
+}
