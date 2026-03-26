@@ -8,3 +8,11 @@
 2026-03-24 03:35:56,465 - INFO - Checked: Howrah Bridge to Victoria Memorial | Real: 4.48km | Gap: 0.72km
 2026-03-24 03:36:01,463 - INFO - Starting Kolkata Map Validation Audit...
 2026-03-24 03:36:01,464 - INFO - Checked: Howrah Bridge to Victoria Memorial | Real: 4.48km | Gap: 0.72km
+2026-03-25 03:03:50,304 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-03-25 03:03:50,326 - WARNING - Audited: Howrah Bridge to Victoria Memorial | Gap: 0.72km | Status: FAIL
+2026-03-25 03:03:50,327 - ERROR - Missing data field for Arsalan Park Circus: 'start'
+2026-03-25 03:03:50,330 - INFO - Market-ready report generated at: reports\audit_report_20260325_0303.json
+2026-03-26 15:12:24,478 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-03-26 15:12:24,504 - WARNING - Audited: Howrah Bridge to Victoria Memorial | Gap: 0.72km | Status: FAIL
+2026-03-26 15:12:24,504 - ERROR - Missing data field for Arsalan Park Circus: 'start'
+2026-03-26 15:12:24,507 - INFO - Market-ready report generated at: reports\audit_report_20260326_1512.json
