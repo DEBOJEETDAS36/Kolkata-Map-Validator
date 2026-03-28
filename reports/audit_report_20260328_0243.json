@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Howrah Bridge to Victoria Memorial",
+        "ground_truth_km": 4.48,
+        "reported_km": 5.2,
+        "variance_km": 0.72,
+        "status": "FAIL",
+        "timestamp": "2026-03-28 02:43:34"
+    }
+]

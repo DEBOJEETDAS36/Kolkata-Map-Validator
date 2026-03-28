@@ -28,6 +28,12 @@ if st.button("Start Kolkata Audit"):
     col2.metric("Failed Routes", len(df[df['status'] == 'FAIL']))
     col3.metric("Avg Variance (km)", round(df['variance_km'].mean(), 2))
 
+    st.subheader("2. Spatial Distribution of Audit Points")
+    if not df.empty:
+        # Streamlit requires columns named 'lat' and 'lon' to render maps
+        map_df = df[['lat', 'lon']] 
+        st.map(map_df)
+
     # --- DATA TABLE ---
     st.subheader("2. Detailed Audit Log")
     st.dataframe(df.style.applymap(
