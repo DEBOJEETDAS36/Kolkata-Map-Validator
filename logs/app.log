@@ -26,3 +26,6 @@
 2026-03-28 02:45:02,495 - INFO - --- Starting Batch Audit for Kolkata ---
 2026-03-28 02:45:02,500 - INFO - Audited: Howrah Bridge to Victoria Memorial | Gap: 0.72km | Status: PASS
 2026-03-28 02:45:02,503 - ERROR - Missing data field for Arsalan Park Circus: 'start'
+2026-03-29 02:42:18,279 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-03-29 02:42:18,303 - WARNING - Audited: Howrah Bridge to Victoria Memorial | Gap: 0.72km | Status: FAIL
+2026-03-29 02:42:18,303 - ERROR - Missing data field for Arsalan Park Circus: 'start'
