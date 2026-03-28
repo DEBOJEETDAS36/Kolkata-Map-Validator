@@ -4,6 +4,7 @@ from datetime import datetime
 from geopy.distance import geodesic
 from src.logger_config import setup_logging
 from fpdf import FPDF
+from io import BytesIO
 
 class GeoAuditEngine:
     def __init__(self, city_name="Kolkata", threshold=1.0):
@@ -87,41 +88,24 @@ class GeoAuditEngine:
         print(f"\n✅ Audit Complete. Report saved to {report_path}")
 
 
-    def export_pdf_report(self):
-        """Generates a professional PDF Certificate of the audit."""
+    def export_pdf_buffer(self):
         pdf = FPDF()
         pdf.add_page()
         pdf.set_font("Arial", 'B', 16)
         
         # Header
-        pdf.cell(200, 10, txt="GeoAudit Kolkata: Operational Accuracy Report", ln=True, align='C')
-        pdf.set_font("Arial", size=10)
-        pdf.cell(200, 10, txt=f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M')}", ln=True, align='C')
+        pdf.cell(200, 10, txt="GeoAudit Kolkata: Accuracy Certificate", ln=True, align='C')
         pdf.ln(10)
-
-        # Table Header
-        pdf.set_font("Arial", 'B', 10)
-        pdf.cell(80, 10, "Location Name", 1)
-        pdf.cell(40, 10, "Variance (km)", 1)
-        pdf.cell(40, 10, "Status", 1)
-        pdf.ln()
 
         # Table Body
         pdf.set_font("Arial", size=10)
         for res in self.audit_results:
             pdf.cell(80, 10, str(res['name']), 1)
-            pdf.cell(40, 10, str(res['variance_km']), 1)
-            
-            # Highlight FAIL in red-like text (optional)
-            if res['status'] == "FAIL":
-                pdf.set_text_color(255, 0, 0)
-            else:
-                pdf.set_text_color(0, 0, 0)
-                
+            pdf.cell(40, 10, f"{res['variance_km']} km", 1)
             pdf.cell(40, 10, str(res['status']), 1)
-            pdf.set_text_color(0, 0, 0)
             pdf.ln()
 
-        report_path = f"reports/Certificate_{datetime.now().strftime('%Y%m%d')}.pdf"
-        pdf.output(report_path)
-        return report_path
+        # Create the buffer
+        pdf_output = pdf.output(dest='S').encode('latin-1') 
+        buffer = BytesIO(pdf_output)
+        return buffer
