@@ -39,10 +39,20 @@ class GeoAuditEngine:
                 actual, gap = self.calculate_variance(item['start'], item['end'], item['app_dist'])
                 status = "PASS" if gap <= self.threshold else "FAIL"
                 
+                # result = {
+                #     "name": item['name'],
+                #     "ground_truth_km": actual,
+                #     "reported_km": item['app_dist'],
+                #     "variance_km": gap,
+                #     "status": status,
+                #     "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                # }
+
                 result = {
                     "name": item['name'],
+                    "lat": item['end'][0],  # Latitude for the map
+                    "lon": item['end'][1],  # Longitude for the map
                     "ground_truth_km": actual,
-                    "reported_km": item['app_dist'],
                     "variance_km": gap,
                     "status": status,
                     "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
