@@ -5,6 +5,7 @@ from geopy.distance import geodesic
 from src.logger_config import setup_logging
 from fpdf import FPDF
 from io import BytesIO
+import requests
 
 class GeoAuditEngine:
     def __init__(self, city_name="Kolkata", threshold=1.0):
@@ -109,3 +110,20 @@ class GeoAuditEngine:
         pdf_output = pdf.output(dest='S').encode('latin-1') 
         buffer = BytesIO(pdf_output)
         return buffer
+    
+    def get_osrm_route(self, start, end):
+        # OSRM expects [lon, lat] format
+        url = f"http://router.project-osrm.org/route/v1/driving/{start[1]},{start[0]};{end[1]},{end[0]}?overview=false"
+        
+        try:
+            response = requests.get(url, timeout=5)
+            data = response.json()
+            
+            if data['code'] == 'Ok':
+                # Distance is returned in meters, convert to km
+                road_distance = data['routes'][0]['distance'] / 1000
+                return round(road_distance, 2)
+        except Exception as e:
+            self.logger.error(f"OSRM API Error: {e}")
+        
+        return None
