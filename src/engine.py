@@ -51,12 +51,32 @@ class GeoAuditEngine:
                 #     "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 # }
 
+                # result = {
+                #     "name": item['name'],
+                #     "lat": item['end'][0],  # Latitude for the map
+                #     "lon": item['end'][1],  # Longitude for the map
+                #     "ground_truth_km": actual,
+                #     "variance_km": gap,
+                #     "status": status,
+                #     "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                # }
+
+                # Inside the for loop in run_batch_audit:
+                actual_road_km = self.get_osrm_route(item['start'], item['end'])
+                geodesic_km = geodesic(item['start'], item['end']).kilometers
+
+                # The "Market Insight": Compare what the APP says vs what the ROAD actually is
+                road_variance = abs(actual_road_km - item['app_dist']) if actual_road_km else 0
+                status = "PASS" if road_variance <= self.threshold else "FAIL"
+
                 result = {
                     "name": item['name'],
-                    "lat": item['end'][0],  # Latitude for the map
-                    "lon": item['end'][1],  # Longitude for the map
-                    "ground_truth_km": actual,
-                    "variance_km": gap,
+                    "lat": item['end'][0],
+                    "lon": item['end'][1],
+                    "crow_flies_km": round(geodesic_km, 2),
+                    "actual_road_km": actual_road_km,
+                    "reported_km": item['app_dist'],
+                    "variance_km": round(road_variance, 2),
                     "status": status,
                     "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 }
