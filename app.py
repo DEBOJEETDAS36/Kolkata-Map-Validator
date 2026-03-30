@@ -111,7 +111,7 @@ if st.session_state.audit_df is not None:
 
     # 3. Data Table
     st.subheader("3. Detailed Audit Log")
-    st.dataframe(df.style.applymap(
+    st.dataframe(df.style.map(
         lambda x: 'background-color: #ffcccc' if x == 'FAIL' else 'background-color: #ccffcc', 
         subset=['status']
     ))
