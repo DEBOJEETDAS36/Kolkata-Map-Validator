@@ -109,6 +109,22 @@ if st.session_state.audit_df is not None:
     st.subheader("2. Spatial Distribution of Audit Points")
     st.map(df[['lat', 'lon']])
 
+    # --- ADD THIS TO YOUR app.py BELOW THE MAP SECTION ---
+
+if st.session_state.audit_df is not None:
+    df = st.session_state.audit_df
+    
+    st.subheader("4. Distance Comparison Analysis")
+    
+    # Prepare data for the chart
+    chart_data = df[['name', 'crow_flies_km', 'actual_road_km', 'reported_km']]
+    chart_data = chart_data.set_index('name')
+    
+    # Display the Comparison Bar Chart
+    st.bar_chart(chart_data)
+    
+    st.info("💡 **Insight:** If 'Reported KM' is significantly lower than 'Actual Road KM', the driver is being underpaid for that route.")
+
     # 3. Data Table
     st.subheader("3. Detailed Audit Log")
     st.dataframe(df.style.map(
