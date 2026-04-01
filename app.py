@@ -109,7 +109,7 @@ if st.session_state.audit_df is not None:
     st.subheader("2. Spatial Distribution of Audit Points")
     st.map(df[['lat', 'lon']])
 
-    # --- ADD THIS TO YOUR app.py BELOW THE MAP SECTION ---
+    # -- Chart View ---
 
 if st.session_state.audit_df is not None:
     df = st.session_state.audit_df
