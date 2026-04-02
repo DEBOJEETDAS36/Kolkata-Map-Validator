@@ -65,7 +65,7 @@ import streamlit as st
 import pandas as pd
 from src.engine import GeoAuditEngine
 
-# --- DASHBOARD CONFIG ---
+# --- DASHBOARD CONFIGURATION ---
 st.set_page_config(page_title="GeoAudit Kolkata", layout="wide")
 st.title("📍 GeoAudit Kolkata: Market-Ready MVP")
 st.markdown("Professional Geospatial Validation for Logistics & Mapping Operations.")
