@@ -65,3 +65,32 @@
 2026-04-01 13:16:56,971 - INFO - --- Starting Batch Audit for Kolkata ---
 2026-04-01 13:16:59,174 - INFO - Audited: Howrah Bridge to Victoria Memorial | Gap: 0.72km | Status: PASS
 2026-04-01 13:16:59,174 - ERROR - Missing data field for Arsalan Park Circus: 'start'
+2026-04-03 13:44:18,494 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-04-03 13:44:18,524 - ERROR - Missing data field for Arsalan Park Circus: 'start'
+2026-04-03 13:44:18,524 - ERROR - Missing data field for Victoria Memorial: 'start'
+2026-04-03 13:46:14,866 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-04-03 13:46:16,909 - INFO - Audited: Howrah Bridge to Victoria Memorial | Gap: 0.72km | Status: PASS
+2026-04-03 13:46:16,910 - ERROR - Missing data field for Arsalan Park Circus: 'start'
+2026-04-03 13:50:22,235 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-04-03 13:50:22,243 - ERROR - Failed to process Howrah Bridge to Victoria Memorial: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 13:50:22,244 - ERROR - Failed to process Arsalan Park Circus: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 13:52:07,955 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-04-03 13:52:07,958 - ERROR - Failed to process Howrah Bridge to Victoria Memorial: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 13:52:07,960 - ERROR - Failed to process Arsalan Park Circus: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 13:53:14,484 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-04-03 13:53:14,495 - ERROR - Failed to process Howrah Bridge to Victoria Memorial: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 13:53:14,496 - ERROR - Failed to process Arsalan Park Circus: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 13:55:22,886 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-04-03 13:55:22,890 - ERROR - Failed to process Howrah Bridge to Victoria Memorial: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 13:55:22,894 - ERROR - Failed to process Arsalan Park Circus: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 13:58:17,020 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-04-03 13:58:17,026 - ERROR - Failed to process Howrah Bridge to Victoria Memorial: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 13:58:17,027 - ERROR - Failed to process Arsalan Park Circus: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 14:02:24,237 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-04-03 14:02:24,240 - ERROR - Failed to process Howrah Bridge to Victoria Memorial: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 14:02:24,243 - ERROR - Failed to process Arsalan Park Circus: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 14:03:30,717 - INFO - --- Starting Batch Audit for Kolkata ---
+2026-04-03 14:03:30,746 - ERROR - Failed to process Howrah Bridge to Victoria Memorial: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 14:03:30,747 - ERROR - Failed to process Park Street to Science City: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 14:03:30,748 - ERROR - Failed to process Salt Lake Sector V to Kolkata Airport: cannot access local variable 'actual_road_km' where it is not associated with a value
+2026-04-03 14:03:30,748 - ERROR - Failed to process Sealdah Station to Eden Gardens: cannot access local variable 'actual_road_km' where it is not associated with a value

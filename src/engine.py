@@ -39,27 +39,25 @@ class GeoAuditEngine:
 
         for item in data['landmarks']:
             try:
+
+                # Inside your audit loop
+                road_diff = abs(actual_road_km - geodesic_km)
+                app_diff = abs(item['app_dist'] - actual_road_km)
+
+                # Categorize the error
+                if app_diff <= self.threshold:
+                    category = "OPTIMAL"
+                elif item['app_dist'] < geodesic_km:
+                    category = "IMPOSSIBLE_SHORT" # App says it's shorter than a straight line
+                elif app_diff > 5.0:
+                    category = "EXTREME_DETOUR" # Routing is sending drivers on a massive loop
+                else:
+                    category = "ROUTING_INEFFICIENCY"
+
+                result["issue_type"] = category
+
                 actual, gap = self.calculate_variance(item['start'], item['end'], item['app_dist'])
                 status = "PASS" if gap <= self.threshold else "FAIL"
-                
-                # result = {
-                #     "name": item['name'],
-                #     "ground_truth_km": actual,
-                #     "reported_km": item['app_dist'],
-                #     "variance_km": gap,
-                #     "status": status,
-                #     "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                # }
-
-                # result = {
-                #     "name": item['name'],
-                #     "lat": item['end'][0],  # Latitude for the map
-                #     "lon": item['end'][1],  # Longitude for the map
-                #     "ground_truth_km": actual,
-                #     "variance_km": gap,
-                #     "status": status,
-                #     "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                # }
 
                 # Inside the for loop in run_batch_audit:
                 actual_road_km = self.get_osrm_route(item['start'], item['end'])

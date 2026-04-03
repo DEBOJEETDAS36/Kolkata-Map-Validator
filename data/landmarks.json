@@ -1,16 +1,28 @@
 {
-    "landmarks": [
-        {
-            "name": "Howrah Bridge to Victoria Memorial",
-            "start": [22.5851, 88.3468],
-            "end": [22.5448, 88.3426],
-            "app_dist": 5.2
-        },
-        {
-            "name": "Arsalan Park Circus",
-            "type": "business",
-            "open": 11,
-            "close": 23
-        }
-    ]
+  "landmarks": [
+    {
+      "name": "Howrah Bridge to Victoria Memorial",
+      "start": [22.5851, 88.3468],
+      "end": [22.5448, 88.3426],
+      "app_dist": 5.2
+    },
+    {
+      "name": "Park Street to Science City",
+      "start": [22.5529, 88.3527],
+      "end": [22.5392, 88.3965],
+      "app_dist": 6.8
+    },
+    {
+      "name": "Salt Lake Sector V to Kolkata Airport",
+      "start": [22.5744, 88.4339],
+      "end": [22.6420, 88.4387],
+      "app_dist": 12.5
+    },
+    {
+      "name": "Sealdah Station to Eden Gardens",
+      "start": [22.5675, 88.3700],
+      "end": [22.5646, 88.3433],
+      "app_dist": 3.9
+    }
+  ]
 }
